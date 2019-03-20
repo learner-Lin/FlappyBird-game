@@ -2,8 +2,8 @@
     let Pipe = function () {
         //上管高度，随机100-300
         this.h1 = Math.round(Math.random() * game.canvas.height * 0.2 + game.canvas.height * 0.1);
-        //空隙固定180
-        this.space = 180;
+        //空隙固定160
+        this.space = 160;
         //下管高度= canvas的高-中间-上管
         this.h2 = game.canvas.height - 112 - this.h1 - this.space;
         this.x = game.canvas.width * 1.5;

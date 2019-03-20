@@ -111,8 +111,8 @@
                 game.land.render();
                 game.bird.update();
                 game.bird.render();
-                // 每150帧渲染管子
-                game.f % 150 === 0 && new Pipe();
+                // 每100帧渲染管子
+                game.f % 100 === 0 && new Pipe();
                 game.pipeArr.forEach((item) => {
                     item.update();
                     item.render();
