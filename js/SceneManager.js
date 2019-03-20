@@ -146,7 +146,12 @@
                 this.gameoverY += 5;
                 game.draw.drawImage(game.allImg["scoreboard"], (game.canvas.width - 236) / 2, this.gameoverY)
                 game.draw.drawImage(game.allImg["medal_gold"], (game.canvas.width - 236) / 2 + 32, this.gameoverY + 113)
-                if (this.gameoverY > game.canvas.height * 0.23) this.gameoverY = game.canvas.height * 0.23;
+                if (this.gameoverY > game.canvas.height * 0.23) {
+                    this.gameoverY = game.canvas.height * 0.23;
+                    //重新开始按键，场景2
+                    this.buttonY = this.gameoverY + 250;
+                    game.draw.drawImage(game.allImg["replay"], this.buttonX, this.buttonY);
+                }
                 // 渲染死亡分数，拼接图片
                 for (let i = 0; i < this.deadscore.length; i++) {
                     game.draw.drawImage(game.allImg["font_small_" + this.deadscore[i]], (game.canvas.width - 236) / 2 + 180 + 12 * i, this.gameoverY + 113);
@@ -155,10 +160,7 @@
                 for (let i = 0; i < this.bestscore.length; i++) {
                     game.draw.drawImage(game.allImg["font_small_" + this.bestscore[i]], (game.canvas.width - 236) / 2 + 180 + 12 * i, this.gameoverY + 153);
                 };
-                //重新开始按键，场景2
-                this.buttonY -= 9;
-                if (this.buttonY < (game.canvas.width - 236) / 2 + 300) this.buttonY = (game.canvas.width - 236) / 2 + 300;
-                game.draw.drawImage(game.allImg["replay"], this.buttonX, this.buttonY);
+
                 break;
             default:
                 null;
