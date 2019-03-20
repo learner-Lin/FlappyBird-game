@@ -157,7 +157,7 @@
                 };
                 //重新开始按键，场景2
                 this.buttonY -= 9;
-                if (this.buttonY < 0.57 * game.canvas.height) this.buttonY = 0.57 * game.canvas.height;
+                if (this.buttonY < (game.canvas.width - 236) / 2 + 300) this.buttonY = (game.canvas.width - 236) / 2 + 300;
                 game.draw.drawImage(game.allImg["replay"], this.buttonX, this.buttonY);
                 break;
             default:
