@@ -86,9 +86,9 @@
 
     Game.prototype.start = function () {
 
-        this.draw.fillStyle = "red";
-        this.draw.font = "30px consolas";
-        this.draw.fillText("游戏开始", canvas.width * 0.1, canvas.height / 3 - 20);
+        // this.draw.fillStyle = "red";
+        // this.draw.font = "30px consolas";
+        // this.draw.fillText("游戏开始", canvas.width * 0.1, canvas.height / 3 - 20);
         //定时器
         this.f = 0;
         //实例化场景管理器

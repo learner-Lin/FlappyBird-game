@@ -36,6 +36,7 @@
                 break;
             case 4:
                 game.scene = 4;
+                this.best = 0;
                 this.gameoverY = 0;
                 this.bindEvent();
                 // 重新开始按键
@@ -158,7 +159,6 @@
                 this.buttonY -= 9;
                 if (this.buttonY < 0.57 * game.canvas.height) this.buttonY = 0.57 * game.canvas.height;
                 game.draw.drawImage(game.allImg["replay"], this.buttonX, this.buttonY);
-                console.log(game.scene)
                 break;
             default:
                 null;
@@ -169,8 +169,13 @@
         game.canvas.onclick = (e) => {
             switch (game.scene) {
                 case 0:
-                    if (e.clientX > this.buttonX && e.clientX < (this.buttonX + 115) && e.clientY > this.buttonY
-                        && e.clientY < (this.buttonY + 70)) {
+                    var x = e.clientX;
+                    var y = e.clientY;
+                    var rect = game.canvas.getBoundingClientRect();
+                    x -= rect.left;
+                    y -= rect.top;
+                    if (x > this.buttonX && x < (this.buttonX + 115) && y > this.buttonY
+                        && y < (this.buttonY + 70)) {
                         game.scene = 1;
                         this.enter(1);
                     }
@@ -184,8 +189,13 @@
                 case 3:
                     break;
                 case 4:
-                    if (e.clientX > this.buttonX && e.clientX < (this.buttonX + 115) && e.clientY > this.buttonY
-                        && e.clientY < (this.buttonY + 70)) {
+                    var x = e.clientX;
+                    var y = e.clientY;
+                    var rect = game.canvas.getBoundingClientRect();
+                    x -= rect.left;
+                    y -= rect.top;
+                    if (x > this.buttonX && x < (this.buttonX + 115) && y > this.buttonY
+                        && y < (this.buttonY + 70)) {
                         game.scene = 1;
                         this.enter(1);
                     }

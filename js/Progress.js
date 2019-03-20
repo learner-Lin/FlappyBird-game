@@ -10,6 +10,9 @@ Progress.prototype.update = function(w){
     this.w = w;
 };
 Progress.prototype.render = function(){
+    this.draw.fillStyle = "red";
+    this.draw.font = "30px consolas";
+    this.draw.fillText("努力加载中~~", canvas.width * 0.1, canvas.height / 3 - 20);
     this.draw.fillStyle = "yellowgreen";
     this.draw.fillRect(this.x,this.y,this.w,this.h)
 };
